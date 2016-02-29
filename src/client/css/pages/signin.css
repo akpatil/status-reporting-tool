@@ -12,6 +12,10 @@ input {
 	border: none !important;
 }
 
+.border-bottom {
+	border-bottom: 1px solid #003333;
+}
+
 .signin-wrapper {
 	background-color: rgba(0, 0, 0, 0.1);
 	width: 100%;
@@ -36,6 +40,8 @@ input {
 .login-header h3 span:nth-child(1) {
 	font-weight: bold;
 }
+
+.btn-aqua {width: 100%;}
 
 .footer-v1 {
 	height: 20vh;

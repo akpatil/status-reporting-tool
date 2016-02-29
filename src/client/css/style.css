@@ -18,3 +18,17 @@
 .margin-top-20 {margin-top: 20px;}
 .margin-top-40 {margin-top: 40px;}
 .margin-top-60 {margin-top: 60px;}
+
+.btn-aqua {
+	background-color: #00CCCC !important;
+	border: none !important;
+	border-radius: 5px !important;
+	color: #fff !important;
+	transition: background-color 0.3s ease-out;
+}
+
+.btn-aqua:hover {
+	background-color: #003333 !important;
+	color: #fff !important;
+	transition: background-color 0.3s ease-out;
+}
