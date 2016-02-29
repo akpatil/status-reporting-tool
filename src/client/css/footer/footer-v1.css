@@ -1,0 +1,29 @@
+.footer-wrapper {
+	width: 100%;
+}
+
+.footer-links {
+	width: 70%;
+	margin: 0 auto;
+	padding-top: 30px;
+}
+
+.footer-links ul {
+	display: inline-flex;
+	width: 100%;
+}
+
+.footer-links li {
+	padding: 0 40px;
+	list-style-type: none;
+	text-align: center;
+	margin: 0 auto;
+}	
+
+.footer-rights {
+	width: 70%;
+	text-align: center;
+	margin: 0 auto;
+	padding-top: 10px;
+	color: rgba(0, 0, 0, 0.5);
+}

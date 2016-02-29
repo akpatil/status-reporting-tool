@@ -17,3 +17,5 @@ var UserSchema = new Schema({
 		type: String
 	}
 });
+
+mongoose.model('User', UserSchema);

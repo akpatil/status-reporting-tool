@@ -6,10 +6,10 @@ var webpack = require('webpack-stream');
 var babel = require('gulp-babel');
 var util = require('gulp-util');
 
-gulp.task('build', ['build-client', 'build-server']);
+gulp.task('build', ['build-client']);
 
 gulp.task('lint', function(){
-	return gulp.src(['**/*.js', '!node_modules/**/*.js'])
+	return gulp.src(['src/client/js/*.js', '!node_modules/**/*.*', '!src/client/libs/**/*.*'])
 	.pipe(jshint({
 		esnext: true
 	}))
@@ -21,8 +21,14 @@ gulp.task('build-client', ['lint'], function(){
 	return gulp.src(['src/client/js/*.js']);
 });
 
-gulp.task('build-server', ['lint'], function(){
-	return gulp.src(['src/server/**/*.*']);
+//gulp.task('build-server', ['lint'], function(){
+//	return gulp.src(['src/server/**/*.*']);
+//});
+
+gulp.task('watch', function(){
+	gulp.watch(['src/client/*.*']);
+	gulp.watch(['src/server/*.*']);
+	gulp.start('run');
 });
 
 gulp.task('run', ['build'], function(){
@@ -36,3 +42,5 @@ gulp.task('run', ['build'], function(){
 		util.log('Server restarted!');
 	});
 });
+
+gulp.task('default', ['run']);

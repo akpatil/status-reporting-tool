@@ -28,12 +28,12 @@ module.exports = function(){
 		secret: config.developmentSecret
 	}));
 	
-	app.set('views', './src/app/views');
+	app.set('views', './server/app/views');
 	app.set('view engine', 'ejs');
 
-	app.use(express.static('./src/client'));
+	app.use(express.static('./client'));
 
-	//require('../app/routes/user.server.route')(app);
+	require('../app/routes/user.server.route')(app);
 
 	return app;
 };	
