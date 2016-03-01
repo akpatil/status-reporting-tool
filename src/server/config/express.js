@@ -3,7 +3,8 @@ var config = require('./config'),
 	express = require('express'),
 	session = require('express-session'),
 	methodOverride = require('method-override'),
-	bodyParser = require('body-parser');
+	bodyParser = require('body-parser'),
+	passport = require('passport');
 
 module.exports = function(){
 	var app = express();
@@ -27,6 +28,9 @@ module.exports = function(){
 		resave: true,
 		secret: config.developmentSecret
 	}));
+
+	app.use(passport.initialize());
+	app.use(passport.session());
 	
 	app.set('views', './server/app/views');
 	app.set('view engine', 'ejs');

@@ -1,4 +1,5 @@
 var mongoose = require('mongoose');
+var crypto = require('crypto');
 var Schema = mongoose.Schema;
 var UserSchema = new Schema({
 	firstName: {
@@ -26,7 +27,7 @@ var UserSchema = new Schema({
 	},
 	password: {
 		type: String,
-		validate: [function(){
+		validate: [function(password){
 			return password && password.length > 6;
 		}, 'password should be longer than 6 characters']
 	},

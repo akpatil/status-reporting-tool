@@ -31,7 +31,7 @@ exports.list = function(req, res, next){
 };
 
 exports.readByID = function(req, res, next, id){
-	User.find({
+	User.findOne({
 		_id: id
 	}, function(err, user){
 		if(err)
