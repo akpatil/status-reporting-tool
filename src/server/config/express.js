@@ -38,6 +38,7 @@ module.exports = function(){
 	app.use(express.static('./client'));
 
 	require('../app/routes/user.server.route')(app);
+	require('../app/routes/dashboard.server.route')(app);
 
 	return app;
 };	
