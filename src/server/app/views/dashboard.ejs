@@ -14,27 +14,44 @@
 	<!-- page style import -->
 	<link rel="stylesheet" type="text/css" href="/css/pages/dashboard.css" />
 
+	<!-- google fonts -->
+	<link href='https://fonts.googleapis.com/css?family=Pinyon+Script' rel='stylesheet' type='text/css'>
+
 </head>
 <body>
-<div class="dashboard-wrapper">
+<div class="dashboard-header-wrapper">
 	<div class="container-fluid">
 		<nav class="navbar">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#" aria-expanded="false">
+			<div class="navbar-header margin-top-20">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#dashboard-header-options" aria-expanded="false">
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
 				<a class="navbar-brand" href="#">
-					<ul>
-						<li><span>John Hancock</span></li>
+					<ul class="header-logo">
+						<li><span >John Hancock</span></li>
 						<li><span>Status Reporting</span><span>Tool</span></li>
 					</ul>
 				</a>
-			</div>
+			</div><!-- navbar-header -->
+			<div class="collapse navbar-collapse margin-top-20 dashboard-header-options" id="dashboard-header-options">
+				<ul class="nav navbar-nav pull-right">
+					<li><a href="#">Welcome, John Doe</a></li>
+					<li><a href="#"><i class="fa fa-2x fa-bell-o"></i></a></li>
+					<li><a href="#">Logout</a></li>
+					<li><a href="#"><i class="fa fa-2x fa-search"></i></a></li>
+				</ul>
+			</div><!-- dashboard-header -->
 		</nav>
 	</div>
-</div><!-- dashboard-wrapper -->
+</div><!-- dashboard-header-wrapper -->
+<div class="dashboard-title-bar">
+	<div class="container-fluid">
+		<p>Home</p>
+	</div><!-- container-fluid -->
+</div><!-- dashboard-title-bar -->
+<div ng-view></div>
 </body>
 <script type="text/javascript" src="/libs/jquery/dist/jquery.min.js"></script>
 <script type="text/javascript" src="/libs/bootstrap/dist/js/bootstrap.min.js"></script>
