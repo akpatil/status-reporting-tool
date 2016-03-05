@@ -9,19 +9,24 @@
 	<link rel="stylesheet" type="text/css" href="/libs/font-awesome/css/font-awesome.min.css" />
 
 	<!-- Custom style import -->
-	<link rel="stylesheet" type="text/css" href="/css/style.css" />
+	<link rel="stylesheet" type="text/css" href="/assets/css/style.css" />
 
 	<!-- page style import -->
-	<link rel="stylesheet" type="text/css" href="/css/pages/signin.css" />
+	<link rel="stylesheet" type="text/css" href="/assets/css/pages/signin.css" />
 
 	<!-- footer style import -->
-	<link rel="Stylesheet" type="text/css" href="/css/footer/footer-v1.css" />
+	<link rel="Stylesheet" type="text/css" href="/assets/css/footer/footer-v1.css" />
 
 	<!-- google fonts -->
 	<link href='https://fonts.googleapis.com/css?family=Pinyon+Script' rel='stylesheet' type='text/css'>
 
 </head>
 <body>
+
+	<% for(var i in messages) { %>
+		<div class="flash"><%= messages[i] %></div>
+	<% } %>
+
 	<div class="parent-wrapper">
 		<div class="signin-wrapper">
 			<div class="login-wrapper">

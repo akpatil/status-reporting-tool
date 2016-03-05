@@ -3,7 +3,8 @@ var User = require('mongoose').model('User');
 exports.renderSignin = function(req, res, next){
 	if(!req.user){
 		res.render('signin', {
-			title: 'Sign-In Form'
+			title: 'Sign-In Form',
+			messages: req.flash('error') || req.flash('info')
 		});
 	}
 	else{

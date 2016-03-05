@@ -4,7 +4,8 @@ var config = require('./config'),
 	session = require('express-session'),
 	methodOverride = require('method-override'),
 	bodyParser = require('body-parser'),
-	passport = require('passport');
+	passport = require('passport'),
+	flash = require('connect-flash');
 
 module.exports = function(){
 	var app = express();
@@ -29,6 +30,7 @@ module.exports = function(){
 		secret: config.developmentSecret
 	}));
 
+	app.use(flash());
 	app.use(passport.initialize());
 	app.use(passport.session());
 	
@@ -39,6 +41,7 @@ module.exports = function(){
 
 	require('../app/routes/user.server.route')(app);
 	require('../app/routes/dashboard.server.route')(app);
+	require('../app/routes/project.server.route')(app);
 
 	return app;
 };	

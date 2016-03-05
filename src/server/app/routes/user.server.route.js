@@ -7,7 +7,7 @@ module.exports = function(app){
 	app.param('userID', User.readByID);
 
 	app.route('/signin').get(User.renderSignin).post(passport.authenticate('local', {
-		successRedirect: '/dashboard',
+		successRedirect: '/#!/project',
 		failureRedirect: '/signin',
 		failureFlash: true
 	}));
