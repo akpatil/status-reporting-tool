@@ -1,0 +1,11 @@
+.form-header {border-bottom:1px solid rgba(0, 0, 0, 0.2); }
+.form-button-list li {
+	list-style-type: none;
+	display: inline-flex;
+}
+ul.form-button-list {
+	margin: 20px 0;
+}
+.form-wrapper {
+	margin: 3% 0;
+}

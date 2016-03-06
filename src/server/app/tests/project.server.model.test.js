@@ -1,4 +1,5 @@
 var app = require('../../server'),
+	request = require('supertest'),
 	should = require('should'),
 	mongoose = require('mongoose'),
 	User = mongoose.model('User'),
@@ -17,7 +18,6 @@ describe('Project model unit test:', function(){
 		});
 		user.save(function(){
 			project = new Project({
-				subscriberName: user.firstName + ' ' + user.lastName,
 				projectName: 'Lorem Ipsum',
 				strategicAlignment: 'none',
 				projectDescription: 'lorem ipsum test test blah blah',
@@ -31,9 +31,12 @@ describe('Project model unit test:', function(){
 				forecastedCost:'99999' ,
 				implementationDate: '12/01/2016',
 				milestoneDate: '12/01/2016',
-				status: 'active'
+				status: 'active',
+				user: user
 			});
-			done();
+			project.save(function(err){
+				done();
+			});
 		});
 	});
 	describe('Testing the save method', function(){
