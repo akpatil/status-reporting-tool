@@ -27,7 +27,7 @@ module.exports = function(){
 	app.use(session({
 		saveUninitialized: true,
 		resave: true,
-		secret: config.developmentSecret
+		secret: config.sessionSecret
 	}));
 
 	app.use(flash());

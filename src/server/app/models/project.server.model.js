@@ -2,9 +2,8 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var ProjectSchema = new Schema({
 	subscriberName: {
-		type: String,
-		trim: true,
-		required: 'cannot be blank'
+		type: Schema.ObjectId,
+		ref: 'User'
 	},
 	projectName: {
 		type: String,

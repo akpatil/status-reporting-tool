@@ -1,10 +1,10 @@
-var Project = require('../models/project.server.model');
+var Project = require('mongoose').model('Project');
 
 var getErrorMessage = function(err){
-	if(err.Errors){
-		for(var errName in err.Errors){
-			if(err.Errors[errName].message)
-				return err.Errors[errName].message;
+	if(err.errors){
+		for(var errName in err.errors){
+			if(err.errors[errName].message)
+				return err.errors[errName].message;
 		}
 	}
 	else {
@@ -55,5 +55,16 @@ exports.readByID = function(req, res, next, id){
 			req.project = project;
 			next();
 		}
+	});
+};
+
+exports.delete = function(req, res, next){
+	var project = req.project;
+	project.remove(function(err){
+		if(err)
+			return res.status(400).send({
+				message: getErrorMessage(err)
+			});
+		res.json(project);
 	});
 };

@@ -1,1 +1,5 @@
-asdadsdasad
+<div data-ng-controller="UserController" data-ng-init="find()">
+	<ul data-ng-repeat="project in projects">
+		<li><p data-ng-bind="project.projectName"></p></li>
+	</ul>
+</div>
